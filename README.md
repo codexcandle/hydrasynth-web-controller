@@ -10,9 +10,9 @@ Am starting with LARGE DISPLAY to choose device PATCH (PROGRAM + BANK).
 1. setup via TEMPLATE:
   https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
   -yarn install
-2. plugin your HYDRASYNTH.
-3. launch web page:
+2. plugin your HYDRASYNTH to your computer (via usb).
+3. start project:
   -yarn dev
-4. view page:
+4. view web page:
    http://localhost:3000/
-5. send midi commands via web page ui to HYDRASYNTH.
+5. using page controls, send midi commands to HYDRASYNTH.
