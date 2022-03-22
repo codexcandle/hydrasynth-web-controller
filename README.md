@@ -11,7 +11,7 @@ https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
 
 ## setup
 1. install project dependencies:
-  ``yarn install
+  ```yarn install```
 2. plugin HYDRASYNTH to computer (via usb).
 3. start project:
   ``yarn dev
