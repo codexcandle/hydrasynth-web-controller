@@ -6,11 +6,13 @@ https://www.ashunsoundmachines.com/hydrasynth-key
 
 Am starting with LARGE DISPLAY to choose device PATCH (PROGRAM + BANK).
 
+Note, this project is based on the wonderful template:
+https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
+
 ## setup
-1. setup via TEMPLATE:
-  https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
+1. install project dependencies:
   -yarn install
-2. plugin your HYDRASYNTH to your computer (via usb).
+2. plugin HYDRASYNTH to computer (via usb).
 3. start project:
   -yarn dev
 4. view web page:
