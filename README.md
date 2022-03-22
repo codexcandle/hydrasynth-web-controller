@@ -1,24 +1,11 @@
 # HYDRASYNTH WEB CONTROLLER
 
-1. SETUP VIA TEMPLATE:
-  -----------------------------------------------------------
-  # Vite + React + Typescript + Eslint + Prettier
-
-  A starter for React with Typescript with the fast Vite and all static code testing with Eslint and formatting with Prettier.
-
-  ![Vite + React + Typescript + Eslint + Prettier](/resources/screenshot.png)
-
-  I found out about Vite and I wanted to have a boilerplate for the technologies that I use. You can find more about these in the following links: [Vite](https://github.com /vitejs/vite), [React](https://reactjs.org/), [Typescript](https://www.typescriptlang.org/), [Eslint](https://eslint.org/), [Prettier](https://prettier.io/).
-
-  ## Installation
-
-  Clone the repo and run `yarn install`
-
-  ## Start
-
-  After the successfull installation of the packages: `yarn dev`
-  -----------------------------------------------------------
-  
+1. setup via TEMPLATE:
+  https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
+  -yarn install
 2. plugin your HYDRASYNTH.
-3. send midi commands via web page:
-  http://localhost:3000/
+3. launch web page:
+  -yarn dev
+4. view page:
+   http://localhost:3000/
+5. send midi commands via web page ui to hydrasynth.
