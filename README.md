@@ -1,6 +1,7 @@
 # HYDRASYNTH WEB CONTROLLER
 
 ## overview
+
 This project started as was difficult to view the small LCD display of the Hydrasynth:
 https://www.ashunsoundmachines.com/hydrasynth-key
 
@@ -10,18 +11,22 @@ Note, uses the wonderful template at:
 https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
 
 ## setup
+
 1. install project dependencies:
-  ```yarn install```
+   `yarn install`
 2. plugin HYDRASYNTH to computer (via usb).
 3. start project:
-  ```yarn dev```
+   `yarn dev`
 4. view web page:
    http://localhost:3000/
 5. using page controls, send midi commands to HYDRASYNTH.
 
 ## trouble-shoot
-1. HYDRASYNTH not receiving midi messages? 
+
+1. HYDRASYNTH not receiving midi messages?
+
 - Refresh web page.
 
 2. Error: requestMIDIAccess not available, make sure you are using MIDI-compatible browser.
+
 - Try CHROME (vs Firefox, etc).
