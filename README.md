@@ -1,10 +1,10 @@
 # HYDRASYNTH WEB CONTROLLER
 
 ## overview
-This idea started as I found it difficult to view the small LCD display of the Hydrasynth:
+This project started as was difficult to view the small LCD display of the Hydrasynth:
 https://www.ashunsoundmachines.com/hydrasynth-key
 
-Am starting with LARGE DISPLAY to choose device PATCH (PROGRAM + BANK).
+Thus, starting with LARGE DISPLAY to choose device PATCH (PROGRAM + BANK).
 
 Note, uses the wonderful template at:
 https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
