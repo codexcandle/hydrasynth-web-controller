@@ -1,9 +1,8 @@
 # HYDRASYNTH WEB CONTROLLER
 
 ## overview
+This idea started as I found it difficult to view the small LCD display of the Hydrasynth:
 https://www.ashunsoundmachines.com/hydrasynth-key
-
-This idea started as I found it difficult to view the small LCD display of the Hydrasynth.
 
 Am starting with LARGE DISPLAY to choose device PATCH (PROGRAM + BANK).
 
