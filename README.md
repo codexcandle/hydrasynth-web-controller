@@ -6,7 +6,7 @@ https://www.ashunsoundmachines.com/hydrasynth-key
 
 Am starting with LARGE DISPLAY to choose device PATCH (PROGRAM + BANK).
 
-Note, this project is based on the wonderful template:
+Note, uses the wonderful template at:
 https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
 
 ## setup
