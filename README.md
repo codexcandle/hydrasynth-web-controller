@@ -1,5 +1,7 @@
 # HYDRASYNTH WEB CONTROLLER
 
+https://www.ashunsoundmachines.com/hydrasynth-key
+
 1. setup via TEMPLATE:
   https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
   -yarn install
