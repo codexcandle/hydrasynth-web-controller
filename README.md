@@ -14,7 +14,7 @@ https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
   ```yarn install```
 2. plugin HYDRASYNTH to computer (via usb).
 3. start project:
-  ``yarn dev
+  ```yarn dev```
 4. view web page:
    http://localhost:3000/
 5. using page controls, send midi commands to HYDRASYNTH.
