@@ -18,3 +18,7 @@ https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
 4. view web page:
    http://localhost:3000/
 5. using page controls, send midi commands to HYDRASYNTH.
+
+## trouble-shoot
+Q.  HYDRASYNTH not receiving midi messages?
+A.  refresh web page.
