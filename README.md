@@ -8,4 +8,4 @@
   -yarn dev
 4. view page:
    http://localhost:3000/
-5. send midi commands via web page ui to hydrasynth.
+5. send midi commands via web page ui to HYDRASYNTH.
