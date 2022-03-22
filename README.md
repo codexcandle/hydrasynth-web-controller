@@ -20,4 +20,8 @@ https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
 5. using page controls, send midi commands to HYDRASYNTH.
 
 ## trouble-shoot
-HYDRASYNTH not receiving midi messages? Refresh web page.
+1. HYDRASYNTH not receiving midi messages? 
+- Refresh web page.
+
+2. Error: requestMIDIAccess not available, make sure you are using MIDI-compatible browser.
+- Try CHROME (vs Firefox, etc).
