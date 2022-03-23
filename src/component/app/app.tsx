@@ -5,6 +5,8 @@ import React, { FC } from 'react';
 
 import { APP_CONTENT_TEXT, APP_HEADER } from '../../model/appConstants';
 import PatchSelect from '../patchSelect/patchSelect';
+import * as data from './../../model/bank/bank1.json';
+import BankData from './../../model/interface/bankData';
 import imgUrl from './hsynth.png';
 
 function Copyright() {
@@ -21,6 +23,12 @@ function Copyright() {
 }
 
 const App: FC = () => {
+  const bankData: BankData = JSON.parse(JSON.stringify(data as BankData));
+
+  // console.log(json);
+  // console.log(`title: ${json.title}`);
+  // console.log(`program count: ${json.programs.length}`);
+
   return (
     <div className="app">
       <Box
@@ -43,7 +51,7 @@ const App: FC = () => {
             </Typography>
           </Paper>
           {/* <Typography variant="body1">Sticky footer placeholder.</Typography> */}
-          <PatchSelect />
+          <PatchSelect programs={bankData.programs} />
         </Container>
 
         <Box

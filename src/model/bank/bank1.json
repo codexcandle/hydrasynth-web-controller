@@ -1,0 +1,42 @@
+{
+  "title": "Single Factory Bank A 1.5 (legacy)",
+  "programs": [
+    {
+      "title": "Sawpressive GD",
+      "category": "pad"
+    },
+    {
+      "title": "GX UltraPad",
+      "category": "pad"
+    },
+    {
+      "title": "NobleBell GD",
+      "category": "perc"
+    },
+    {
+      "title": "Twilight ET",
+      "category": "pad"
+    },
+    {
+      "title": "LoveArp SCD",
+      "category": "arp"
+    },
+    {
+      "title": "VHS Dreams MP",
+      "category": "keys"
+    },
+
+    {
+      "title": "SineSignSighn GD",
+      "category": "ambient"
+    },
+    {
+      "title": "BrunoBass GD",
+      "category": "bass"
+    },
+    {
+      "title": "Breezy Night DA",
+      "category": "basslead"
+    }
+  ]
+}

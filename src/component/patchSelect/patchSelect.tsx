@@ -1,17 +1,24 @@
 import './patchSelect.styles.sass';
 
 import { MIDIVal, MIDIValOutput } from '@midival/core';
-import { Box, Button, ButtonGroup, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import React, { FC, MouseEvent, useEffect, useState } from 'react';
 
 import { PATCH_SELECTION_HEADER } from '../../model/appConstants';
 import { HSYNTH_MIDI_CC_BANK, HSYNTH_MIDI_DEVICE_NAME } from '../../model/appConstants';
+import PatchData from './../../model/interface/patchData';
 
-const PatchSelect: FC = () => {
+interface Props {
+  programs: PatchData[];
+}
+
+const PatchSelect: FC<{ programs: PatchData[] }> = ({ programs }: Props) => {
   const [hsynthMidiOutput, setHsynthMidiOutput] = useState<MIDIValOutput>();
+  const [programList, setProgramList] = useState<PatchData[]>();
 
   useEffect(() => {
     getDeviceIndex();
+    setProgramList(programs);
   }, []);
 
   function getDeviceIndex() {
@@ -25,17 +32,19 @@ const PatchSelect: FC = () => {
     });
   }
 
-  const handleClick = (e: MouseEvent): void => {
-    e.preventDefault();
+  const handleClick =
+    (index: number) =>
+    (e: MouseEvent<HTMLElement>): void => {
+      e.preventDefault();
 
-    // TODO - make values dynamic
-    const bankIndex = 0; // 0-3
-    const programIndex: number = e.currentTarget.textContent
-      ? +e.currentTarget.textContent - 1
-      : 0; // 0-127;
+      const programIndex: number = index; // 0 -127
+      console.log(index);
 
-    if (hsynthMidiOutput) setProgram(hsynthMidiOutput, bankIndex, programIndex);
-  };
+      // TODO - make values dynamic
+      const bankIndex = 0; // 0-3
+
+      if (hsynthMidiOutput) setProgram(hsynthMidiOutput, bankIndex, programIndex);
+    };
 
   function setProgram(output: MIDIValOutput, bankIndex: number, programIndex: number) {
     output.sendProgramChange(programIndex);
@@ -62,11 +71,16 @@ const PatchSelect: FC = () => {
           {'select program.'}
         </Typography>
         {/* <Typography variant="body1">Sticky footer placeholder.</Typography> */}
-        <ButtonGroup variant="contained" aria-label="outlined primary button group">
-          <Button onClick={handleClick}>1</Button>
-          <Button onClick={handleClick}>2</Button>
-          <Button onClick={handleClick}>3</Button>
-        </ButtonGroup>
+
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          {programList?.map((program, index) => (
+            <Grid item xs={6} key={index}>
+              <Button variant="contained" key={index} onClick={handleClick(index)}>
+                {program.title}
+              </Button>
+            </Grid>
+          ))}
+        </Grid>
       </Container>
     </Box>
   );
