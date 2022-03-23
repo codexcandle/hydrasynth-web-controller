@@ -54,10 +54,8 @@ const PatchSelect: FC = () => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '100vh',
       }}
     >
-      <CssBaseline />
       <Container
         component="main"
         sx={{ mt: 8, mb: 2 }}
