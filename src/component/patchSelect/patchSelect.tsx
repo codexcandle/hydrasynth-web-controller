@@ -1,14 +1,7 @@
 import './patchSelect.styles.sass';
 
 import { MIDIVal, MIDIValOutput } from '@midival/core';
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Container,
-  CssBaseline,
-  Typography,
-} from '@mui/material';
+import { Box, Button, ButtonGroup, Container, Typography } from '@mui/material';
 import React, { FC, MouseEvent, useEffect, useState } from 'react';
 
 import { PATCH_SELECTION_HEADER } from '../../model/appConstants';
