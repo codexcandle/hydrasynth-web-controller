@@ -1,42 +1,516 @@
 {
-  "title": "Single Factory Bank A 1.5 (legacy)",
+  "title": "Inhalt",
   "programs": [
     {
-      "title": "Sawpressive GD",
-      "category": "pad"
+      "title": "Neural  Scan MS",
+      "category": "(none)"
     },
     {
-      "title": "GX UltraPad",
-      "category": "pad"
+      "title": "Phaezra MS",
+      "category": "(none)"
     },
     {
-      "title": "NobleBell GD",
-      "category": "perc"
+      "title": "FairVoice MS",
+      "category": "(none)"
     },
     {
-      "title": "Twilight ET",
-      "category": "pad"
+      "title": "Panners MS",
+      "category": "(none)"
     },
     {
-      "title": "LoveArp SCD",
-      "category": "arp"
+      "title": "Xpander Bass MS",
+      "category": "(none)"
     },
     {
-      "title": "VHS Dreams MP",
-      "category": "keys"
-    },
-
-    {
-      "title": "SineSignSighn GD",
-      "category": "ambient"
+      "title": "Synclavier Dive",
+      "category": "(none)"
     },
     {
-      "title": "BrunoBass GD",
-      "category": "bass"
+      "title": "Hydra Analog Bas",
+      "category": "(none)"
     },
     {
-      "title": "Breezy Night DA",
-      "category": "basslead"
+      "title": "Romantix 88 MS",
+      "category": "(none)"
+    },
+    {
+      "title": "FM Arp MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Neon City MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Purest Feeling",
+      "category": "(none)"
+    },
+    {
+      "title": "Lifeforms MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Zone of Twilight",
+      "category": "(none)"
+    },
+    {
+      "title": "AtmoString MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Rave Talker MS",
+      "category": "(none)"
+    },
+    {
+      "title": "OB Brazzer MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Nordic Strings",
+      "category": "(none)"
+    },
+    {
+      "title": "Computer Worlds",
+      "category": "(none)"
+    },
+    {
+      "title": "Woofy VA Bass MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Pleasure Dome MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Mart's PPG MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Xpander SloStrng",
+      "category": "(none)"
+    },
+    {
+      "title": "Synclavier Bass",
+      "category": "(none)"
+    },
+    {
+      "title": "Jukno 60 ARP MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Ulrich's MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Nemo Studio MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Notchy Stringer",
+      "category": "(none)"
+    },
+    {
+      "title": "Digi Wave Bass",
+      "category": "(none)"
+    },
+    {
+      "title": "PWM Poly 106 Pad",
+      "category": "(none)"
+    },
+    {
+      "title": "Kirk & Mal 60 MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Hit the G Bass",
+      "category": "(none)"
+    },
+    {
+      "title": "Synthetic Vowel",
+      "category": "(none)"
+    },
+    {
+      "title": "Hydra Pulse Clav",
+      "category": "(none)"
+    },
+    {
+      "title": "Euro Piano Organ",
+      "category": "(none)"
+    },
+    {
+      "title": "OB-X MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Comp This! MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Stories Of Old",
+      "category": "(none)"
+    },
+    {
+      "title": "Talking Metal MS",
+      "category": "(none)"
+    },
+    {
+      "title": "OB-X Brass Stab",
+      "category": "(none)"
+    },
+    {
+      "title": "Video Igra MS",
+      "category": "(none)"
+    },
+    {
+      "title": "OB Rez Sweep MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Bamboo ChopStix",
+      "category": "(none)"
+    },
+    {
+      "title": "UK 88 ChordMemry",
+      "category": "(none)"
+    },
+    {
+      "title": "Watery Pond MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Brash Bass MS",
+      "category": "(none)"
+    },
+    {
+      "title": "NASA MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Kraftwerkian MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Synclavier Kalmb",
+      "category": "(none)"
+    },
+    {
+      "title": "Helium MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Oranic Harmonic",
+      "category": "(none)"
+    },
+    {
+      "title": "JP8 PWM Soft MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Synclavier Bell",
+      "category": "(none)"
+    },
+    {
+      "title": "Dialtone Arp MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Black Celebraton",
+      "category": "(none)"
+    },
+    {
+      "title": "Flyover MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Cronenberg Organ",
+      "category": "(none)"
+    },
+    {
+      "title": "JP8 ARP MS",
+      "category": "(none)"
+    },
+    {
+      "title": "FM Bass MS",
+      "category": "(none)"
+    },
+    {
+      "title": "DX EP MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Riverbed MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Crystal Palace",
+      "category": "(none)"
+    },
+    {
+      "title": "PPG Bass & Keys",
+      "category": "(none)"
+    },
+    {
+      "title": "Astral Float MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Akashic Gates MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Lurker MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Belief Bass MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Digital EthnoLed",
+      "category": "(none)"
+    },
+    {
+      "title": "Duracel Modular",
+      "category": "(none)"
+    },
+    {
+      "title": "Oral Exam MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Rhytmus Samplus",
+      "category": "(none)"
+    },
+    {
+      "title": "Nice Mover MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Forever PadStrng",
+      "category": "(none)"
+    },
+    {
+      "title": "Cave Man MS",
+      "category": "(none)"
+    },
+    {
+      "title": "TV Show MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Deep UniBass MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Friendly Arp MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Builder Race MS",
+      "category": "(none)"
+    },
+    {
+      "title": "P5 Hello HardSnc",
+      "category": "(none)"
+    },
+    {
+      "title": "Harpsitone MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Electrik Gitargh",
+      "category": "(none)"
+    },
+    {
+      "title": "Trancer Arp MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Arco Pet Shop MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Slow Pad MS",
+      "category": "(none)"
+    },
+    {
+      "title": "The Running Man",
+      "category": "(none)"
+    },
+    {
+      "title": "Gentle Rods MS",
+      "category": "(none)"
+    },
+    {
+      "title": "DCO Poly Pad MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Woody Tines MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Whispers MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Sunrise FM MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Synclav Organ MS",
+      "category": "(none)"
+    },
+    {
+      "title": "80's Bass MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Shaarrrp MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Ice Haus MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Magnetic Equinox",
+      "category": "(none)"
+    },
+    {
+      "title": "Alpha Keys MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Breaded Butter",
+      "category": "(none)"
+    },
+    {
+      "title": "Sync Risky Biz",
+      "category": "(none)"
+    },
+    {
+      "title": "Glassy Fifths MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Brass Bars MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Moag Bass MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Cutting Dbl Stab",
+      "category": "(none)"
+    },
+    {
+      "title": "Forrests MS",
+      "category": "(none)"
+    },
+    {
+      "title": "WaveSweep MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Bird on a Wire",
+      "category": "(none)"
+    },
+    {
+      "title": "Mouth Area Lead",
+      "category": "(none)"
+    },
+    {
+      "title": "Rubbing Glass MS",
+      "category": "(none)"
+    },
+    {
+      "title": "1 Os Bass MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Compass Point MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Double Impact MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Christmas Island",
+      "category": "(none)"
+    },
+    {
+      "title": "Shar Bass MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Sizzler MS",
+      "category": "(none)"
+    },
+    {
+      "title": "DCO Chord Arp MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Spreader MS",
+      "category": "(none)"
+    },
+    {
+      "title": "OB Keys MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Sound Designer",
+      "category": "(none)"
+    },
+    {
+      "title": "Deep Diver MS",
+      "category": "(none)"
+    },
+    {
+      "title": "File Under X MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Noisy Gallop MS",
+      "category": "(none)"
+    },
+    {
+      "title": "DigiClav MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Akordian MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Sub Mission MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Steel Keys MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Bad Dream Orchs",
+      "category": "(none)"
+    },
+    {
+      "title": "DX Pad MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Ugly Bass Arp MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Gated Vox MS",
+      "category": "(none)"
+    },
+    {
+      "title": "Patches byINHALT"
     }
   ]
 }
