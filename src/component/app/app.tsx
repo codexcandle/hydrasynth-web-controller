@@ -3,7 +3,11 @@ import './app.styles.sass';
 import { Box, Container, CssBaseline, Link, Paper, Typography } from '@mui/material';
 import React, { FC } from 'react';
 
-import { APP_CONTENT_TEXT, APP_HEADER } from '../../model/appConstants';
+import {
+  APP_GITHUB_LINK_LABEL,
+  APP_GITHUB_LINK_URL,
+  APP_HEADER,
+} from '../../model/constant/appConstants';
 import PatchSelect from '../patchSelect/patchSelect';
 import * as data from './../../model/bank/inhalt.json';
 import BankData from './../../model/interface/bankData';
@@ -46,9 +50,7 @@ const App: FC = () => {
             <Typography variant="h4" component="h3" gutterBottom>
               {APP_HEADER}
             </Typography>
-            <Typography variant="h5" component="h4" gutterBottom>
-              {APP_CONTENT_TEXT}
-            </Typography>
+            <Link href={APP_GITHUB_LINK_URL}>{APP_GITHUB_LINK_LABEL}</Link>
           </Paper>
           {/* <Typography variant="body1">Sticky footer placeholder.</Typography> */}
           <PatchSelect bankTitle={bankData.title} programs={bankData.programs} />

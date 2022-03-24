@@ -4,8 +4,11 @@ import { MIDIVal, MIDIValOutput } from '@midival/core';
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import React, { FC, MouseEvent, useEffect, useState } from 'react';
 
-import { PATCH_SELECTION_HEADER } from '../../model/appConstants';
-import { HSYNTH_MIDI_CC_BANK, HSYNTH_MIDI_DEVICE_NAME } from '../../model/appConstants';
+import { PATCH_SELECTION_HEADER } from '../../model/constant/appConstants';
+import {
+  HSYNTH_MIDI_CC_BANK,
+  HSYNTH_MIDI_DEVICE_NAME,
+} from '../../model/constant/appConstants';
 import PatchData from './../../model/interface/patchData';
 
 interface Props {
@@ -75,7 +78,7 @@ const PatchSelect: FC<{ bankTitle: string; programs: PatchData[] }> = ({
         </Typography>
         {/* <Typography variant="body1">Sticky footer placeholder.</Typography> */}
 
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid container rowSpacing={0.5} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
           {programList?.map((program, index) => (
             <Grid item xs={3} key={index} className="grid">
               <Button variant="contained" key={index} onClick={handleClick(index)}>
