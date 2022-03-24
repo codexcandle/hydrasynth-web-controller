@@ -8,7 +8,8 @@
     "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
     "lint": "yarn lint:format && yarn lint:fix ",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "preview": "vite preview --port 8080"
   },
   "dependencies": {
     "@emotion/react": "^11.8.2",
@@ -39,5 +40,8 @@
     "vite-tsconfig-paths": "^3.3.17"
   },
   "pre-commit": "lint",
-  "license": "MIT"
+  "license": "MIT",
+  "resolutions": {
+    "csstype": "3.0.11"
+  }
 }

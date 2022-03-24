@@ -1,4 +1,4 @@
-import './patchSelect.styles.sass';
+import './patchSelect.sass';
 
 import { MIDIVal, MIDIValOutput } from '@midival/core';
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
@@ -9,17 +9,21 @@ import {
   HSYNTH_MIDI_CC_BANK,
   HSYNTH_MIDI_DEVICE_NAME,
 } from '../../model/constant/appConstants';
+import BankSelect from '../bankSelect/bankSelect';
 import PatchData from './../../model/interface/patchData';
 
 interface Props {
-  bankTitle: string;
-  programs: PatchData[];
+  bankNames: string[];
+  activeBankName: string;
+  programs?: PatchData[];
 }
 
-const PatchSelect: FC<{ bankTitle: string; programs: PatchData[] }> = ({
-  bankTitle,
-  programs,
-}: Props) => {
+const PatchSelect: FC<{
+  bankNames: string[];
+  activeBankName: string;
+
+  programs: PatchData[];
+}> = ({ bankNames, activeBankName, programs }: Props) => {
   const [hsynthMidiOutput, setHsynthMidiOutput] = useState<MIDIValOutput>();
   const [programList, setProgramList] = useState<PatchData[]>();
 
@@ -74,9 +78,11 @@ const PatchSelect: FC<{ bankTitle: string; programs: PatchData[] }> = ({
           {PATCH_SELECTION_HEADER}
         </Typography>
         <Typography variant="h5" component="h2" gutterBottom>
-          {bankTitle}
+          {activeBankName}
         </Typography>
         {/* <Typography variant="body1">Sticky footer placeholder.</Typography> */}
+
+        <BankSelect bankNames={bankNames} />
 
         <Grid container rowSpacing={0.5} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
           {programList?.map((program, index) => (

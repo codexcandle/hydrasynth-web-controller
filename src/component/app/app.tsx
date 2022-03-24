@@ -1,17 +1,19 @@
-import './app.styles.sass';
+import './app.sass';
 
 import { Box, Container, CssBaseline, Link, Paper, Typography } from '@mui/material';
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import {
   APP_GITHUB_LINK_LABEL,
   APP_GITHUB_LINK_URL,
   APP_HEADER,
+  BANK_NAMES,
 } from '../../model/constant/appConstants';
 import PatchSelect from '../patchSelect/patchSelect';
-import * as data from './../../model/bank/inhalt.json';
+import * as inhaltBankData from './../../model/bank/inhalt.json';
 import BankData from './../../model/interface/bankData';
-import imgUrl from './hsynth.png';
+import PatchData from './../../model/interface/patchData';
+import imgUrl from './asset/hsynth.png';
 
 function Copyright() {
   return (
@@ -27,12 +29,30 @@ function Copyright() {
 }
 
 const App: FC = () => {
-  const bankData: BankData = JSON.parse(JSON.stringify(data as BankData));
+  const [bankData, setBankData] = useState<BankData>();
+  const [activeBankName, setActiveBankName] = useState<string>('');
 
-  // console.log(json);
-  // console.log(`title: ${json.title}`);
-  // console.log(`program count: ${json.programs.length}`);
-  console.log('title:' + bankData.title);
+  useEffect(() => {
+    // const dir = '../../model/bank';
+
+    // let jsonData: *;
+    // for (const bankFileName of BANK_NAMES) {
+    //   switch (bankFileName) {
+    //     case 'inhalt':
+    //       // jsonData = inhaltBankData as BankData;
+    //       break;
+    //     case 'spacespaces':
+    //       break;
+    //   }
+    // }
+
+    const data = JSON.parse(JSON.stringify(inhaltBankData as BankData));
+    if (data) {
+      setBankData(data);
+      setActiveBankName(data.title);
+    }
+  }, []);
+
   return (
     <div className="app">
       <Box
@@ -57,8 +77,13 @@ const App: FC = () => {
             </Typography>
             <Link href={APP_GITHUB_LINK_URL}>{APP_GITHUB_LINK_LABEL}</Link>
           </Paper>
-          {/* <Typography variant="body1">Sticky footer placeholder.</Typography> */}
-          <PatchSelect bankTitle={bankData.title} programs={bankData.programs} />
+          {bankData && (
+            <PatchSelect
+              bankNames={BANK_NAMES}
+              activeBankName={activeBankName}
+              programs={bankData.programs}
+            />
+          )}
         </Container>
 
         <Box
