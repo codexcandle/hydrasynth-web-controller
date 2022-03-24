@@ -21,11 +21,12 @@ interface Props {
 const PatchSelect: FC<{
   bankNames: string[];
   activeBankName: string;
-
   programs: PatchData[];
 }> = ({ bankNames, activeBankName, programs }: Props) => {
   const [hsynthMidiOutput, setHsynthMidiOutput] = useState<MIDIValOutput>();
   const [programList, setProgramList] = useState<PatchData[]>();
+  const [programIndex, setProgramIndex] = useState(0);
+  const [bankIndex, setBankIndex] = useState(0);
 
   useEffect(() => {
     getDeviceIndex();
@@ -48,13 +49,21 @@ const PatchSelect: FC<{
     (e: MouseEvent<HTMLElement>): void => {
       e.preventDefault();
 
-      const programIndex: number = index;
-
-      // TODO - make values dynamic
-      const bankIndex = 0; // 0-3
-
-      if (hsynthMidiOutput) setProgram(hsynthMidiOutput, bankIndex, programIndex);
+      if (hsynthMidiOutput) {
+        setProgram(hsynthMidiOutput, bankIndex, index);
+        setProgramIndex(index);
+      }
     };
+
+  const handleBankSelect = (index: number, fileIndex: number) => {
+    if (hsynthMidiOutput) {
+      setProgram(hsynthMidiOutput, index, programIndex);
+      setBankIndex(index);
+
+      // TODO - handle bank-file index
+      console.log('BANK SELECT index: ' + index + ' fileIndex: ' + fileIndex);
+    }
+  };
 
   function setProgram(output: MIDIValOutput, bankIndex: number, programIndex: number) {
     output.sendProgramChange(programIndex);
@@ -80,14 +89,18 @@ const PatchSelect: FC<{
         <Typography variant="h5" component="h2" gutterBottom>
           {activeBankName}
         </Typography>
-        {/* <Typography variant="body1">Sticky footer placeholder.</Typography> */}
-
-        <BankSelect bankNames={bankNames} />
-
+        <BankSelect bankNames={bankNames} selectHandler={handleBankSelect} />
         <Grid container rowSpacing={0.5} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
           {programList?.map((program, index) => (
             <Grid item xs={3} key={index} className="grid">
-              <Button variant="contained" key={index} onClick={handleClick(index)}>
+              <Button
+                variant="contained"
+                key={index}
+                onClick={handleClick(index)}
+                sx={{
+                  backgroundColor: index === programIndex ? 'blue' : 'black',
+                }}
+              >
                 {program.title}
               </Button>
             </Grid>

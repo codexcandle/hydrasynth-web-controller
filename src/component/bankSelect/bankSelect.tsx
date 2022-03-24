@@ -1,112 +1,41 @@
 import './bankSelect.sass';
 
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-} from '@mui/material';
 import React, { FC, useState } from 'react';
+
+import { BANK_SLOT_COUNT } from '../../model/constant/appConstants';
+import ButtonSelectFormControl from '../buttonSelectFormControl/buttonSelectFormControl';
+
 interface Props {
   bankNames: string[];
+  selectHandler: (index: number, fileIndex: number) => void;
 }
 
-const BankSelect: FC<{ bankNames: string[] }> = ({ bankNames }: Props) => {
-  const [selectedBankIndex, setselectedBankIndex] = useState<number>(0);
+type SelectHandlerMethodType = (index: number, fileIndex: number) => void;
 
-  const handleChange = (e: SelectChangeEvent) => {
-    e.preventDefault();
+const BankSelect: FC<{
+  bankNames: string[];
+  selectHandler: SelectHandlerMethodType;
+}> = ({ bankNames, selectHandler }: Props) => {
+  const [selectedSlotIndex, setSelectedSlotIndex] = useState(0);
 
-    setselectedBankIndex(+e.target.value);
+  const buttonSelectFormControlSelectHandler = (slotIndex: number, fileIndex: number) => {
+    setSelectedSlotIndex(slotIndex);
+    selectHandler(slotIndex, fileIndex);
   };
 
   return (
     <div>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Bank A</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={selectedBankIndex.toString()}
-          label="Age"
-          onChange={handleChange}
-        >
-          {bankNames?.map((bankName, index) => (
-            <MenuItem key={index} value={index}>
-              {bankName}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Bank B</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={selectedBankIndex.toString()}
-          label="Age"
-          onChange={handleChange}
-        >
-          {bankNames?.map((bankName, index) => (
-            <MenuItem key={index} value={index}>
-              {bankName}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Bank C</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={selectedBankIndex.toString()}
-          label="Age"
-          onChange={handleChange}
-        >
-          {bankNames?.map((bankName, index) => (
-            <MenuItem key={index} value={index}>
-              {bankName}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Bank D</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={selectedBankIndex.toString()}
-          label="Age"
-          onChange={handleChange}
-        >
-          {bankNames?.map((bankName, index) => (
-            <MenuItem key={index} value={index}>
-              {bankName}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Bank E</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={selectedBankIndex.toString()}
-          label="Age"
-          onChange={handleChange}
-        >
-          {bankNames?.map((bankName, index) => (
-            <MenuItem key={index} value={index}>
-              {bankName}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+      {[...Array(BANK_SLOT_COUNT)].map((e, i) => {
+        return (
+          <ButtonSelectFormControl
+            key={i}
+            bankNames={bankNames}
+            bankIndex={i}
+            selectHandler={buttonSelectFormControlSelectHandler}
+            selected={i === selectedSlotIndex}
+          />
+        );
+      })}
     </div>
   );
 };

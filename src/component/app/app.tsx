@@ -7,7 +7,8 @@ import {
   APP_GITHUB_LINK_LABEL,
   APP_GITHUB_LINK_URL,
   APP_HEADER,
-  BANK_NAMES,
+  BANK_FILE_NAMES,
+  HOMEPAGE_URL,
 } from '../../model/constant/appConstants';
 import PatchSelect from '../patchSelect/patchSelect';
 import * as inhaltBankData from './../../model/bank/inhalt.json';
@@ -18,7 +19,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="white">
       {'Copyright © '}
-      <Link color="inherit" href="https://codebycandle.com">
+      <Link color="inherit" href={HOMEPAGE_URL}>
         Codebycandle
       </Link>{' '}
       {new Date().getFullYear()}
@@ -33,17 +34,6 @@ const App: FC = () => {
 
   useEffect(() => {
     // const dir = '../../model/bank';
-
-    // let jsonData: *;
-    // for (const bankFileName of BANK_NAMES) {
-    //   switch (bankFileName) {
-    //     case 'inhalt':
-    //       // jsonData = inhaltBankData as BankData;
-    //       break;
-    //     case 'spacespaces':
-    //       break;
-    //   }
-    // }
 
     const data = JSON.parse(JSON.stringify(inhaltBankData as BankData));
     if (data) {
@@ -78,7 +68,7 @@ const App: FC = () => {
           </Paper>
           {bankData && (
             <PatchSelect
-              bankNames={BANK_NAMES}
+              bankNames={BANK_FILE_NAMES}
               activeBankName={activeBankName}
               programs={bankData.programs}
             />
@@ -94,7 +84,6 @@ const App: FC = () => {
           }}
         >
           <Container maxWidth="sm">
-            {/* <Typography variant="body1">My sticky footer can be found here.</Typography> */}
             <Copyright />
           </Container>
         </Box>
