@@ -9,10 +9,14 @@ import { HSYNTH_MIDI_CC_BANK, HSYNTH_MIDI_DEVICE_NAME } from '../../model/appCon
 import PatchData from './../../model/interface/patchData';
 
 interface Props {
+  bankTitle: string;
   programs: PatchData[];
 }
 
-const PatchSelect: FC<{ programs: PatchData[] }> = ({ programs }: Props) => {
+const PatchSelect: FC<{ bankTitle: string; programs: PatchData[] }> = ({
+  bankTitle,
+  programs,
+}: Props) => {
   const [hsynthMidiOutput, setHsynthMidiOutput] = useState<MIDIValOutput>();
   const [programList, setProgramList] = useState<PatchData[]>();
 
@@ -37,8 +41,7 @@ const PatchSelect: FC<{ programs: PatchData[] }> = ({ programs }: Props) => {
     (e: MouseEvent<HTMLElement>): void => {
       e.preventDefault();
 
-      const programIndex: number = index; // 0 -127
-      console.log(index);
+      const programIndex: number = index;
 
       // TODO - make values dynamic
       const bankIndex = 0; // 0-3
@@ -61,20 +64,20 @@ const PatchSelect: FC<{ programs: PatchData[] }> = ({ programs }: Props) => {
       <Container
         component="main"
         sx={{ mt: 8, mb: 2 }}
-        maxWidth="sm"
+        maxWidth="lg"
         className="containerBg rcorners"
       >
-        <Typography variant="h2" component="h1" gutterBottom>
+        <Typography variant="h4" component="h3" gutterBottom>
           {PATCH_SELECTION_HEADER}
         </Typography>
         <Typography variant="h5" component="h2" gutterBottom>
-          {'select program.'}
+          {bankTitle}
         </Typography>
         {/* <Typography variant="body1">Sticky footer placeholder.</Typography> */}
 
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           {programList?.map((program, index) => (
-            <Grid item xs={6} key={index}>
+            <Grid item xs={3} key={index} className="grid">
               <Button variant="contained" key={index} onClick={handleClick(index)}>
                 {program.title}
               </Button>
