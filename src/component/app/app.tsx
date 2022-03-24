@@ -12,7 +12,6 @@ import {
 import PatchSelect from '../patchSelect/patchSelect';
 import * as inhaltBankData from './../../model/bank/inhalt.json';
 import BankData from './../../model/interface/bankData';
-import PatchData from './../../model/interface/patchData';
 import imgUrl from './asset/hsynth.png';
 
 function Copyright() {
