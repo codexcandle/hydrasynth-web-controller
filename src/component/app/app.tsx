@@ -44,8 +44,13 @@ const App: FC = () => {
       >
         <CssBaseline />
 
-        <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="lg">
-          <Paper>
+        <Container
+          component="main"
+          sx={{ mt: 8, mb: 2 }}
+          maxWidth="lg"
+          className="containerBgApp"
+        >
+          <Paper sx={{ backgroundColor: '#C2C057' }}>
             <img src={imgUrl} alt="" width="300px"></img>
             <Typography variant="h4" component="h3" gutterBottom>
               {APP_HEADER}
