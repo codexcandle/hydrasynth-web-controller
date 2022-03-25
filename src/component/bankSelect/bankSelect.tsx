@@ -35,6 +35,7 @@ const BankSelect: FC<{
             key={i}
             bankNames={bankNames}
             bankIndex={i}
+            fileIndex={i}
             slotSelectHandler={slotSelectHandler}
             fileSelectHandler={fileSelectHandler}
             selected={i === selectedSlotIndex}
