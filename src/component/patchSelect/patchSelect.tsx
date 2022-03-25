@@ -51,10 +51,11 @@ const PatchSelect: FC<{
         const name = accessObject.inputs[i].name;
         if (name === HSYNTH_MIDI_DEVICE_NAME) {
           const midiOutput = new MIDIValOutput(accessObject.outputs[i]);
+          setHsynthMidiOutput(midiOutput);
 
+          // TODO - hacky to include in this method, but await call not working; investigate.
           setProgramList(banks[bankIndex].programs);
           setProgram(midiOutput, bankIndex, programIndex);
-          setHsynthMidiOutput(midiOutput);
         }
       }
     });
