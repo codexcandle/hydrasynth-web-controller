@@ -86,7 +86,7 @@ const App: FC = () => {
             </Typography>
             <Link href={APP_GITHUB_LINK_URL}>{APP_GITHUB_LINK_LABEL}</Link>
           </Paper>
-          {bankData && <PatchSelect bankNames={BANK_FILE_NAMES} banks={bankData} />}
+          {bankData && <PatchSelect banks={bankData} />}
         </Container>
 
         <Box
