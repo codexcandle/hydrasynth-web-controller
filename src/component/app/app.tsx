@@ -84,10 +84,15 @@ const App: FC = () => {
             sx={{
               backgroundImage: 'linear-gradient(0deg, #000000, #333333, #000000)',
               paddingTop: '10px',
-              maxHeight: '80px',
+              maxHeight: '60px',
             }}
           >
-            <Typography variant="h4" component="h3" gutterBottom sx={{ color: 'white' }}>
+            <Typography
+              variant="h5"
+              component="h4"
+              gutterBottom
+              sx={{ color: '#8F8D15', textAlign: 'right' }}
+            >
               {APP_HEADER}
             </Typography>
             <Link href={APP_GITHUB_LINK_URL} className="headerLink">

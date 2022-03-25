@@ -1,6 +1,6 @@
 export const HOMEPAGE_URL: string = 'https://codebycandle.com';
 
-export const APP_HEADER: string = 'Hydrasynth Web Controller' as string;
+export const APP_HEADER: string = 'HYDRASYNTH web controller' as string;
 export const PATCH_SELECTION_HEADER: string = 'PATCH SELECT' as string;
 
 export const BANK_SLOT_COUNT: number = 5 as number;
