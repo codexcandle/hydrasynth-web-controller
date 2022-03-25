@@ -58,7 +58,7 @@ const ButtonSelectFormControl: FC<{
           color: 'white',
           backgroundColor: selected ? 'blue' : 'black',
           marginRight: '20px',
-          fontSize: '1.5em',
+          fontSize: '1.25em',
         }}
       >
         Bank {bankIndex + 1}

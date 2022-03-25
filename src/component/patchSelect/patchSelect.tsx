@@ -98,7 +98,7 @@ const PatchSelect: FC<{
         maxWidth="lg"
         className="containerBg rcorners"
       >
-        <Typography variant="h4" component="h3" gutterBottom>
+        <Typography variant="h4" component="h3" gutterBottom sx={{ color: 'black' }}>
           {PATCH_SELECTION_HEADER}
         </Typography>
         <Typography variant="h5" component="h2" gutterBottom>

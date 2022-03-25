@@ -79,12 +79,19 @@ const App: FC = () => {
           maxWidth="lg"
           className="containerBgApp"
         >
-          <Paper sx={{ backgroundColor: '#C2C057' }}>
-            <img src={imgUrl} alt="" width="300px"></img>
-            <Typography variant="h4" component="h3" gutterBottom>
+          <Paper
+            sx={{
+              backgroundImage: 'linear-gradient(0deg, #000000, #8F8D15, #000000)',
+              paddingTop: '10px',
+              maxHeight: '80px',
+            }}
+          >
+            <Typography variant="h4" component="h3" gutterBottom sx={{ color: 'white' }}>
               {APP_HEADER}
             </Typography>
-            <Link href={APP_GITHUB_LINK_URL}>{APP_GITHUB_LINK_LABEL}</Link>
+            <Link href={APP_GITHUB_LINK_URL} className="headerLink">
+              {APP_GITHUB_LINK_LABEL}
+            </Link>
           </Paper>
           {bankData && <PatchSelect banks={bankData} />}
         </Container>
