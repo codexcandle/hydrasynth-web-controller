@@ -98,7 +98,7 @@ const PatchSelect: FC<{
         maxWidth="lg"
         className="containerBg rcorners"
       >
-        <Typography variant="h4" component="h3" gutterBottom sx={{ color: 'black' }}>
+        <Typography variant="h5" component="h4" gutterBottom sx={{ color: 'gray' }}>
           {PATCH_SELECTION_HEADER}
         </Typography>
         <Typography variant="h5" component="h2" gutterBottom>
@@ -113,7 +113,7 @@ const PatchSelect: FC<{
                 key={index}
                 onClick={handleClick(index)}
                 sx={{
-                  backgroundColor: index === programIndex ? 'blue' : 'black',
+                  backgroundColor: index === programIndex ? 'green' : 'black',
                 }}
               >
                 {program.title}

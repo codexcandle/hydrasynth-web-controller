@@ -69,6 +69,7 @@ const App: FC = () => {
           display: 'flex',
           flexDirection: 'column',
           minHeight: '100vh',
+          cornerRadius: '200px',
         }}
       >
         <CssBaseline />
@@ -81,7 +82,7 @@ const App: FC = () => {
         >
           <Paper
             sx={{
-              backgroundImage: 'linear-gradient(0deg, #000000, #8F8D15, #000000)',
+              backgroundImage: 'linear-gradient(0deg, #000000, #333333, #000000)',
               paddingTop: '10px',
               maxHeight: '80px',
             }}

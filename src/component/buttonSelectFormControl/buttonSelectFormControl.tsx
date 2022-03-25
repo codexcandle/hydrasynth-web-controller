@@ -55,7 +55,7 @@ const ButtonSelectFormControl: FC<{
         onClick={handleClick}
         variant="contained"
         sx={{
-          color: 'white',
+          color: 'cyan',
           backgroundColor: selected ? 'blue' : 'black',
           marginRight: '20px',
           fontSize: '1.25em',
@@ -68,11 +68,11 @@ const ButtonSelectFormControl: FC<{
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={selectionIndex.toString()}
-          label="Age"
+          label=""
           onChange={handleChange}
           className="formControlSelect"
           sx={{
-            color: 'white',
+            color: 'pink',
           }}
         >
           {bankNames?.map((bankName, index) => (
