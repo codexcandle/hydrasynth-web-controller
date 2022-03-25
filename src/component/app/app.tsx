@@ -11,7 +11,11 @@ import {
   HOMEPAGE_URL,
 } from '../../model/constant/appConstants';
 import PatchSelect from '../patchSelect/patchSelect';
-import * as inhaltBankData from './../../model/bank/inhalt.json';
+import * as bankData_factoryBankA from './../../model/bank/factory-bank-a.json';
+import * as bankData_factoryBankB from './../../model/bank/factory-bank-b.json';
+import * as bankData_factoryBankC from './../../model/bank/factory-bank-c.json';
+import * as bankData_inhalt from './../../model/bank/inhalt.json';
+import * as bankData_sunGodRa from './../../model/bank/sun-god-ra.json';
 import BankData from './../../model/interface/bankData';
 import imgUrl from './asset/hsynth.png';
 
@@ -29,17 +33,33 @@ function Copyright() {
 }
 
 const App: FC = () => {
-  const [bankData, setBankData] = useState<BankData>();
+  const [bankData, setBankData] = useState<BankData[]>();
   const [activeBankName, setActiveBankName] = useState<string>('');
 
   useEffect(() => {
     // const dir = '../../model/bank';
 
-    const data = JSON.parse(JSON.stringify(inhaltBankData as BankData));
-    if (data) {
-      setBankData(data);
-      setActiveBankName(data.title);
+    const bankFiles = [
+      bankData_factoryBankA,
+      bankData_factoryBankB,
+      bankData_factoryBankC,
+      bankData_inhalt,
+      bankData_sunGodRa,
+    ];
+    let parsedData: BankData[] = [];
+    for (let bankFile of bankFiles) {
+      const data: BankData = JSON.parse(JSON.stringify(bankFile as BankData));
+      if (data) parsedData.push(data);
     }
+
+    if (parsedData) setBankData(parsedData);
+
+    // const data1 = JSON.parse(JSON.stringify(bankData_inhalt as BankData));
+    // const data1 = JSON.parse(JSON.stringify(bankData_inhalt as BankData));
+    // if (data1) {
+    //   setBankData(data1);
+    //   setActiveBankName(data1.title);
+    // }
   }, []);
 
   return (
@@ -66,13 +86,7 @@ const App: FC = () => {
             </Typography>
             <Link href={APP_GITHUB_LINK_URL}>{APP_GITHUB_LINK_LABEL}</Link>
           </Paper>
-          {bankData && (
-            <PatchSelect
-              bankNames={BANK_FILE_NAMES}
-              activeBankName={activeBankName}
-              programs={bankData.programs}
-            />
-          )}
+          {bankData && <PatchSelect bankNames={BANK_FILE_NAMES} banks={bankData} />}
         </Container>
 
         <Box

@@ -10,35 +10,51 @@ import {
   HSYNTH_MIDI_DEVICE_NAME,
 } from '../../model/constant/appConstants';
 import BankSelect from '../bankSelect/bankSelect';
+import BankData from './../../model/interface/bankData';
 import PatchData from './../../model/interface/patchData';
 
 interface Props {
-  bankNames: string[];
-  activeBankName: string;
-  programs?: PatchData[];
+  banks: BankData[];
 }
 
 const PatchSelect: FC<{
-  bankNames: string[];
-  activeBankName: string;
-  programs: PatchData[];
-}> = ({ bankNames, activeBankName, programs }: Props) => {
+  banks: BankData[];
+}> = ({ banks }: Props) => {
   const [hsynthMidiOutput, setHsynthMidiOutput] = useState<MIDIValOutput>();
   const [programList, setProgramList] = useState<PatchData[]>();
   const [programIndex, setProgramIndex] = useState(0);
   const [bankIndex, setBankIndex] = useState(0);
 
+  const [activeBankName, setActiveBankName] = useState('');
+
+  let names = [];
+  for (let bank of banks) {
+    names.push(bank.title);
+  }
+  const [bankNames, setBankNames] = useState<string[]>(names);
+
   useEffect(() => {
-    getDeviceIndex();
-    setProgramList(programs);
+    const getDevIndex = async () => await getDeviceIndex();
+
+    getDevIndex();
+
+    setProgramList(banks[bankIndex].programs);
+    console.log('2');
+    if (hsynthMidiOutput) {
+      setProgram(hsynthMidiOutput, bankIndex, programIndex);
+    }
   }, []);
 
-  function getDeviceIndex() {
+  async function getDeviceIndex() {
     MIDIVal.connect().then((accessObject) => {
       for (let i = 0; i < accessObject.inputs.length; i++) {
         const name = accessObject.inputs[i].name;
         if (name === HSYNTH_MIDI_DEVICE_NAME) {
-          setHsynthMidiOutput(new MIDIValOutput(accessObject.outputs[i]));
+          const midiOutput = new MIDIValOutput(accessObject.outputs[i]);
+
+          setProgramList(banks[bankIndex].programs);
+          setProgram(midiOutput, bankIndex, programIndex);
+          setHsynthMidiOutput(midiOutput);
         }
       }
     });
@@ -57,11 +73,9 @@ const PatchSelect: FC<{
 
   const handleBankSelect = (index: number, fileIndex: number) => {
     if (hsynthMidiOutput) {
+      setProgramList(banks[fileIndex].programs);
       setProgram(hsynthMidiOutput, index, programIndex);
       setBankIndex(index);
-
-      // TODO - handle bank-file index
-      console.log('BANK SELECT index: ' + index + ' fileIndex: ' + fileIndex);
     }
   };
 

@@ -4,7 +4,13 @@ export const APP_HEADER: string = 'Hydrasynth Web Controller' as string;
 export const PATCH_SELECTION_HEADER: string = 'Patch Select' as string;
 
 export const BANK_SLOT_COUNT: number = 5 as number;
-export const BANK_FILE_NAMES: string[] = ['inhalt'] as string[];
+export const BANK_FILE_NAMES: string[] = [
+  'factory-bank-a',
+  'factory-bank-b',
+  'factory-bank-c',
+  'inhalt',
+  'sun-god-ra',
+] as string[];
 
 export const APP_GITHUB_LINK_URL: string =
   'https://github.com/codexcandle/hydrasynth-web-controller' as string;
