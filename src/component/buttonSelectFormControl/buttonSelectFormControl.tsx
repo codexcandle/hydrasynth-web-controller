@@ -55,7 +55,7 @@ const ButtonSelectFormControl: FC<{
         onClick={handleClick}
         variant="contained"
         sx={{
-          color: 'cyan',
+          color: selected ? 'white' : 'gray',
           backgroundColor: selected ? 'blue' : 'black',
           marginRight: '20px',
           fontSize: '1.25em',

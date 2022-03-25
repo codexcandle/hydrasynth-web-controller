@@ -84,18 +84,22 @@ const App: FC = () => {
             sx={{
               backgroundImage: 'linear-gradient(0deg, #000000, #333333, #000000)',
               paddingTop: '10px',
-              maxHeight: '60px',
+              maxHeight: '40px',
             }}
           >
             <Typography
               variant="h5"
               component="h4"
               gutterBottom
-              sx={{ color: '#8F8D15', textAlign: 'right' }}
+              sx={{ color: '#8F8D15', textAlign: 'left', marginLeft: '10px' }}
             >
               {APP_HEADER}
             </Typography>
-            <Link href={APP_GITHUB_LINK_URL} className="headerLink">
+            <Link
+              href={APP_GITHUB_LINK_URL}
+              className="headerLink"
+              sx={{ color: '#8F8D15', textAlign: 'left', marginLeft: '0px' }}
+            >
               {APP_GITHUB_LINK_LABEL}
             </Link>
           </Paper>

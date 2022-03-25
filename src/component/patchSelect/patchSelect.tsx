@@ -98,9 +98,9 @@ const PatchSelect: FC<{
         maxWidth="lg"
         className="containerBg rcorners"
       >
-        <Typography variant="h5" component="h4" gutterBottom sx={{ color: 'gray' }}>
+        {/* <Typography variant="h5" component="h4" gutterBottom sx={{ color: 'gray' }}>
           {PATCH_SELECTION_HEADER}
-        </Typography>
+        </Typography> */}
         <Typography variant="h5" component="h2" gutterBottom>
           {activeBankName}
         </Typography>
@@ -114,6 +114,7 @@ const PatchSelect: FC<{
                 onClick={handleClick(index)}
                 sx={{
                   backgroundColor: index === programIndex ? 'green' : 'black',
+                  color: index === programIndex ? 'white' : 'gray',
                 }}
               >
                 {program.title}
