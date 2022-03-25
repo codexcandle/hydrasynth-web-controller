@@ -18,9 +18,13 @@ const BankSelect: FC<{
 }> = ({ bankNames, selectHandler }: Props) => {
   const [selectedSlotIndex, setSelectedSlotIndex] = useState(0);
 
-  const buttonSelectFormControlSelectHandler = (slotIndex: number, fileIndex: number) => {
+  const slotSelectHandler = (slotIndex: number, fileIndex: number) => {
     setSelectedSlotIndex(slotIndex);
     selectHandler(slotIndex, fileIndex);
+  };
+
+  const fileSelectHandler = (slotIndex2: number, fileIndex: number) => {
+    if (slotIndex2 == selectedSlotIndex) selectHandler(slotIndex2, fileIndex);
   };
 
   return (
@@ -31,7 +35,8 @@ const BankSelect: FC<{
             key={i}
             bankNames={bankNames}
             bankIndex={i}
-            selectHandler={buttonSelectFormControlSelectHandler}
+            slotSelectHandler={slotSelectHandler}
+            fileSelectHandler={fileSelectHandler}
             selected={i === selectedSlotIndex}
           />
         );

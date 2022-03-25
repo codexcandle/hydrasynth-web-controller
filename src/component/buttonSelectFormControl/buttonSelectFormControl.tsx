@@ -13,27 +13,37 @@ import React, { FC, MouseEvent, useState } from 'react';
 interface Props {
   bankIndex: number;
   bankNames: string[];
-  selectHandler: (bankIndex: number, selectionIndex: number) => void;
+  slotSelectHandler: (bankIndex: number, selectionIndex: number) => void;
+  fileSelectHandler: (bankIndex: number, selectionIndex: number) => void;
   selected: boolean;
 }
 
 const ButtonSelectFormControl: FC<{
   bankIndex: number;
   bankNames: string[];
-  selectHandler: (bankIndex: number, selectionIndex: number) => void;
+  slotSelectHandler: (bankIndex: number, selectionIndex: number) => void;
+  fileSelectHandler: (bankIndex: number, selectionIndex: number) => void;
   selected: boolean;
-}> = ({ bankIndex, bankNames, selectHandler, selected }: Props) => {
+}> = ({
+  bankIndex,
+  bankNames,
+  slotSelectHandler,
+  fileSelectHandler,
+  selected,
+}: Props) => {
   const [selectionIndex, setselectionIndex] = useState<number>(0);
 
   const handleChange = (e: SelectChangeEvent) => {
     e.preventDefault();
-    setselectionIndex(+e.target.value);
+
+    const index = +e.target.value;
+    setselectionIndex(index);
+    fileSelectHandler(bankIndex, index);
   };
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-
-    selectHandler(bankIndex, selectionIndex);
+    slotSelectHandler(bankIndex, selectionIndex);
   };
 
   return (
