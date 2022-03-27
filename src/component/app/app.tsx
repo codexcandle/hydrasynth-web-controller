@@ -37,8 +37,6 @@ const App: FC = () => {
   const [activeBankName, setActiveBankName] = useState<string>('');
 
   useEffect(() => {
-    // const dir = '../../model/bank';
-
     const bankFiles = [
       bankData_factoryBankA,
       bankData_factoryBankB,
@@ -53,13 +51,6 @@ const App: FC = () => {
     }
 
     if (parsedData) setBankData(parsedData);
-
-    // const data1 = JSON.parse(JSON.stringify(bankData_inhalt as BankData));
-    // const data1 = JSON.parse(JSON.stringify(bankData_inhalt as BankData));
-    // if (data1) {
-    //   setBankData(data1);
-    //   setActiveBankName(data1.title);
-    // }
   }, []);
 
   return (
