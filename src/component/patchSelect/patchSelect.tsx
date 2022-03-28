@@ -1,6 +1,6 @@
 import './patchSelect.sass';
 
-import { MIDIVal, MIDIValOutput } from '@midival/core';
+import { MIDIVal, MIDIValInput, MIDIValOutput } from '@midival/core';
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import React, { FC, MouseEvent, useEffect, useState } from 'react';
 
@@ -21,6 +21,7 @@ const PatchSelect: FC<{
   banks: BankData[];
 }> = ({ banks }: Props) => {
   const [hsynthMidiOutput, setHsynthMidiOutput] = useState<MIDIValOutput>();
+  const [hsynthMidiInput, setHsynthMidiInput] = useState<MIDIValInput>();
   const [programList, setProgramList] = useState<PatchData[]>();
   const [programIndex, setProgramIndex] = useState(0);
   const [bankIndex, setBankIndex] = useState(0);
@@ -34,28 +35,32 @@ const PatchSelect: FC<{
   const [bankNames, setBankNames] = useState<string[]>(names);
 
   useEffect(() => {
-    const getDevIndex = async () => await getDeviceIndex();
-
-    getDevIndex();
-
-    setProgramList(banks[bankIndex].programs);
-    console.log('2');
-    if (hsynthMidiOutput) {
-      setProgram(hsynthMidiOutput, bankIndex, programIndex);
-    }
+    getMidiInstrument();
   }, []);
 
-  async function getDeviceIndex() {
+  useEffect(() => {
+    if (hsynthMidiOutput) {
+      setProgramList(banks[bankIndex].programs);
+      setProgram(hsynthMidiOutput, bankIndex, programIndex);
+    }
+  }, [hsynthMidiOutput]);
+
+  useEffect(() => {
+    if (hsynthMidiInput) {
+      // todo: investigate why "onProgramChange" doesn't work
+      hsynthMidiInput.onAllProgramChange(({ channel, program }) => {
+        console.log(`CHANNEL: ${channel} NOW Program ${program}`);
+      });
+    }
+  }, [hsynthMidiInput]);
+
+  async function getMidiInstrument() {
     MIDIVal.connect().then((accessObject) => {
       for (let i = 0; i < accessObject.inputs.length; i++) {
         const name = accessObject.inputs[i].name;
         if (name === HSYNTH_MIDI_DEVICE_NAME) {
-          const midiOutput = new MIDIValOutput(accessObject.outputs[i]);
-          setHsynthMidiOutput(midiOutput);
-
-          // TODO - hacky to include in this method, but await call not working; investigate.
-          setProgramList(banks[bankIndex].programs);
-          setProgram(midiOutput, bankIndex, programIndex);
+          setHsynthMidiOutput(new MIDIValOutput(accessObject.outputs[i]));
+          setHsynthMidiInput(new MIDIValInput(accessObject.inputs[i]));
         }
       }
     });
@@ -74,6 +79,15 @@ const PatchSelect: FC<{
 
   const handleBankSelect = (index: number, fileIndex: number) => {
     if (hsynthMidiOutput) {
+      console.log(
+        'HANDLE BANK SELECT index: ' +
+          index +
+          ' fileIndex: ' +
+          fileIndex +
+          ' pIndex: ' +
+          programIndex,
+      );
+
       setProgramList(banks[fileIndex].programs);
       setProgram(hsynthMidiOutput, index, programIndex);
       setBankIndex(index);

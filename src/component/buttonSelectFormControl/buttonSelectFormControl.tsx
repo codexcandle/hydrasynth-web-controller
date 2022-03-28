@@ -11,24 +11,24 @@ import {
 import React, { FC, MouseEvent, useState } from 'react';
 
 interface Props {
-  bankIndex: number;
   bankNames: string[];
+  slotIndex: number;
   fileIndex: number;
-  slotSelectHandler: (bankIndex: number, selectionIndex: number) => void;
-  fileSelectHandler: (bankIndex: number, selectionIndex: number) => void;
+  slotSelectHandler: (slotIndex: number, selectionIndex: number) => void;
+  fileSelectHandler: (slotIndex: number, selectionIndex: number) => void;
   selected: boolean;
 }
 
 const ButtonSelectFormControl: FC<{
-  bankIndex: number;
   bankNames: string[];
+  slotIndex: number;
   fileIndex: number;
-  slotSelectHandler: (bankIndex: number, selectionIndex: number) => void;
-  fileSelectHandler: (bankIndex: number, selectionIndex: number) => void;
+  slotSelectHandler: (slotIndex: number, selectionIndex: number) => void;
+  fileSelectHandler: (slotIndex: number, selectionIndex: number) => void;
   selected: boolean;
 }> = ({
-  bankIndex,
   bankNames,
+  slotIndex,
   fileIndex,
   slotSelectHandler,
   fileSelectHandler,
@@ -41,12 +41,12 @@ const ButtonSelectFormControl: FC<{
 
     const index = +e.target.value;
     setSelectionIndex(index);
-    fileSelectHandler(bankIndex, index);
+    fileSelectHandler(slotIndex, index);
   };
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    slotSelectHandler(bankIndex, selectionIndex);
+    slotSelectHandler(slotIndex, selectionIndex);
   };
 
   return (
@@ -61,7 +61,7 @@ const ButtonSelectFormControl: FC<{
           fontSize: '1.25em',
         }}
       >
-        Bank {bankIndex + 1}
+        Bank {slotIndex + 1}
       </Button>
       <FormControl className="formControl">
         <Select

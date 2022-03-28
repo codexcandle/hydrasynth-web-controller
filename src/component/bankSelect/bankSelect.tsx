@@ -34,7 +34,7 @@ const BankSelect: FC<{
           <ButtonSelectFormControl
             key={i}
             bankNames={bankNames}
-            bankIndex={i}
+            slotIndex={i}
             fileIndex={i}
             slotSelectHandler={slotSelectHandler}
             fileSelectHandler={fileSelectHandler}
