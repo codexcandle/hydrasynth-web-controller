@@ -49,7 +49,7 @@ const PatchSelect: FC<{
     if (hsynthMidiInput) {
       // todo: investigate why "onProgramChange" doesn't work
       hsynthMidiInput.onAllProgramChange(({ channel, program }) => {
-        console.log(`CHANNEL: ${channel} NOW Program ${program}`);
+        // console.log(`CHANNEL: ${channel} NOW Program ${program}`);
 
         setProgramIndex(program);
       });
