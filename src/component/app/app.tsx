@@ -67,7 +67,7 @@ const App: FC = () => {
 
         <Container
           component="main"
-          sx={{ mt: 8, mb: 2 }}
+          sx={{ mt: 8, mb: 2, borderRadius: '14px' }}
           maxWidth="lg"
           className="containerBgApp"
         >

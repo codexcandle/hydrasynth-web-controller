@@ -23,6 +23,7 @@ const PatchHeader: FC<{
         minWidth: 275,
         backgroundColor: '#111111',
         color: '#00b8b8',
+        borderRadius: '14px',
       }}
     >
       <CardContent>
