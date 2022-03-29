@@ -19,3 +19,6 @@ export const APP_GITHUB_LINK_LABEL: string = 'INFO' as string;
 
 export const HSYNTH_MIDI_DEVICE_NAME: string = 'HYDRASYNTH KB' as string;
 export const HSYNTH_MIDI_CC_BANK: number = 32 as number;
+
+export const DEFAULT_BANK_NAME: string = 'DEFAULT BANK' as string;
+export const DEFAULT_PROGRAM_NAME: string = 'DEFAULT PROGRAM' as string;

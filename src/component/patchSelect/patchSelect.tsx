@@ -6,6 +6,8 @@ import React, { FC, MouseEvent, useEffect, useState } from 'react';
 
 import { PATCH_SELECTION_HEADER } from '../../model/constant/appConstants';
 import {
+  DEFAULT_BANK_NAME,
+  DEFAULT_PROGRAM_NAME,
   HSYNTH_MIDI_CC_BANK,
   HSYNTH_MIDI_DEVICE_NAME,
 } from '../../model/constant/appConstants';
@@ -33,8 +35,9 @@ const PatchSelect: FC<{
     names.push(bank.title);
   }
   const [bankNames, setBankNames] = useState<string[]>(names);
-  const [selectedBankName, setSelectedBankName] = useState<string>();
-  const [selectedProgramName, setSelectedProgramName] = useState<string>();
+  const [selectedBankName, setSelectedBankName] = useState<string>(DEFAULT_BANK_NAME);
+  const [selectedProgramName, setSelectedProgramName] =
+    useState<string>(DEFAULT_PROGRAM_NAME);
 
   useEffect(() => {
     getMidiInstrument();
@@ -101,10 +104,7 @@ const PatchSelect: FC<{
     output.sendControlChange(HSYNTH_MIDI_CC_BANK, bankIndex);
     output.sendProgramChange(programIndex);
 
-    console.log('PROGRAM TITLE NOW: ' + banks[bankIndex].programs[programIndex].title);
-    const programTitle = banks[bankIndex].programs[programIndex].title;
-
-    updateHeader(banks[bankIndex].title, programTitle);
+    updateHeader(banks[bankIndex].title, banks[bankIndex].programs[programIndex].title);
   }
 
   function updateHeader(bankName: string, programName: string) {

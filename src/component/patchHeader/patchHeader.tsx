@@ -4,8 +4,8 @@ import Box from '@mui/material/Box';
 import React, { FC, useEffect, useState } from 'react';
 
 interface Props {
-  bankName?: string;
-  programName?: string;
+  bankName: string;
+  programName: string;
 }
 
 const PatchHeader: FC<{
@@ -24,7 +24,9 @@ const PatchHeader: FC<{
         },
       }}
     >
-      <div>{`BANK: ${bankName} PROGRAM: ${programName}`}</div>
+      <div>{`BANK: ${bankName ? bankName : 'DEFAULT BANK NAME'} PROGRAM: ${
+        programName ? programName : 'DEFAULT PROGRAM NAME'
+      }`}</div>
     </Box>
   );
 };
