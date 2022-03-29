@@ -4,6 +4,8 @@
 
 As an owner of the [Hydrasynth](https://www.ashunsoundmachines.com/hydrasynth-key) hardware synthesizer, have found it difficult to view its (somewhat small) main LCD display screen. Thus, this tool was created.
 
+![tool](https://github.com/codexcandle/hydrasynth-web-controller/blob/main/screenshot/screenshot.png?raw=true)
+
 A few notes:
 
 - DESKTOP-ONLY (as again, preferring larger screen space)
