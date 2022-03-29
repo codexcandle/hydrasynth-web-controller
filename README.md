@@ -2,7 +2,7 @@
 
 ## Overview
 
-[home](https://codebycandle.com/lab/hsynth-web-controller/)
+[HOME](https://codebycandle.com/lab/hsynth-web-controller/)
 
 As an owner of the [Hydrasynth](https://www.ashunsoundmachines.com/hydrasynth-key) hardware synthesizer, have found it difficult to view its (somewhat small) main LCD display screen. Thus, this tool was created.
 
