@@ -12,6 +12,7 @@ import {
 import BankSelect from '../bankSelect/bankSelect';
 import BankData from './../../model/interface/bankData';
 import PatchData from './../../model/interface/patchData';
+import PatchHeader from './../patchHeader/patchHeader';
 
 interface Props {
   banks: BankData[];
@@ -34,6 +35,9 @@ const PatchSelect: FC<{
   }
   const [bankNames, setBankNames] = useState<string[]>(names);
 
+  const [selectedBankName, setSelectedBankName] = useState<string>();
+  const [selectedProgramName, setSelectedProgramName] = useState<string>();
+
   useEffect(() => {
     getMidiInstrument();
   }, []);
@@ -50,7 +54,6 @@ const PatchSelect: FC<{
       // todo: investigate why "onProgramChange" doesn't work
       hsynthMidiInput.onAllProgramChange(({ channel, program }) => {
         // console.log(`CHANNEL: ${channel} NOW Program ${program}`);
-
         setProgramIndex(program);
       });
     }
@@ -91,14 +94,24 @@ const PatchSelect: FC<{
       );
 
       setProgramList(banks[fileIndex].programs);
-      setProgram(hsynthMidiOutput, index, programIndex);
       setBankIndex(index);
+      setProgram(hsynthMidiOutput, index, programIndex);
     }
   };
 
   function setProgram(output: MIDIValOutput, bankIndex: number, programIndex: number) {
     output.sendProgramChange(programIndex);
     output.sendControlChange(HSYNTH_MIDI_CC_BANK, bankIndex);
+
+    console.log('PROGRAM TITLE NOW: ' + banks[bankIndex].programs[programIndex].title);
+    const programTitle = banks[bankIndex].programs[programIndex].title;
+
+    updateHeader(banks[bankIndex].title, programTitle);
+  }
+
+  function updateHeader(bankName: string, programName: string) {
+    setSelectedBankName(bankName);
+    setSelectedProgramName(programName);
   }
 
   return (
@@ -117,6 +130,7 @@ const PatchSelect: FC<{
         {/* <Typography variant="h5" component="h4" gutterBottom sx={{ color: 'gray' }}>
           {PATCH_SELECTION_HEADER}
         </Typography> */}
+        <PatchHeader bankName={selectedBankName} programName={selectedProgramName} />
         <Typography variant="h5" component="h2" gutterBottom>
           {activeBankName}
         </Typography>
