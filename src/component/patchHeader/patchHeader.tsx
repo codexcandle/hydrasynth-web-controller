@@ -1,7 +1,12 @@
 import './patchHeader.sass';
 
 import Box from '@mui/material/Box';
-import React, { FC, useEffect, useState } from 'react';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import React, { FC } from 'react';
 
 interface Props {
   bankName: string;
@@ -13,21 +18,22 @@ const PatchHeader: FC<{
   programName: string;
 }> = ({ bankName, programName }: Props) => {
   return (
-    <Box
+    <Card
       sx={{
-        width: '100%',
-        height: 40,
-        backgroundColor: 'primary.dark',
-        '&:hover': {
-          backgroundColor: 'primary.main',
-          opacity: [0.9, 0.8, 0.7],
-        },
+        minWidth: 275,
+        backgroundColor: '#111111',
+        color: '#00b8b8',
       }}
     >
-      <div>{`BANK: ${bankName ? bankName : 'DEFAULT BANK NAME'} PROGRAM: ${
-        programName ? programName : 'DEFAULT PROGRAM NAME'
-      }`}</div>
-    </Box>
+      <CardContent>
+        <Typography sx={{ fontSize: 20 }} color="#a3ffff" gutterBottom>
+          {bankName}
+        </Typography>
+        <Typography variant="h2" component="div">
+          {programName}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
 

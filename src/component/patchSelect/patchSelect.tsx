@@ -56,6 +56,11 @@ const PatchSelect: FC<{
       hsynthMidiInput.onAllProgramChange(({ channel, program }) => {
         // console.log(`CHANNEL: ${channel} NOW Program ${program}`);
         setProgramIndex(program);
+
+        updateHeader(
+          banks[bankIndex].title,
+          banks[bankIndex].programs[program - 1].title,
+        );
       });
     }
   }, [hsynthMidiInput]);
