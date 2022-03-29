@@ -33,6 +33,8 @@ const AppHeader = () => {
         <Link
           href={APP_GITHUB_LINK_URL}
           className="headerLink"
+          target="_blank"
+          rel="noopener"
           sx={{
             color: '#8F8D15',
             textAlign: 'left',
