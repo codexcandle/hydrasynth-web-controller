@@ -26,7 +26,6 @@ const PatchSelect: FC<{
   const [programList, setProgramList] = useState<PatchData[]>();
   const [programIndex, setProgramIndex] = useState(0);
   const [bankIndex, setBankIndex] = useState(0);
-
   const [activeBankName, setActiveBankName] = useState('');
 
   let names = [];
@@ -34,7 +33,6 @@ const PatchSelect: FC<{
     names.push(bank.title);
   }
   const [bankNames, setBankNames] = useState<string[]>(names);
-
   const [selectedBankName, setSelectedBankName] = useState<string>();
   const [selectedProgramName, setSelectedProgramName] = useState<string>();
 
@@ -100,8 +98,8 @@ const PatchSelect: FC<{
   };
 
   function setProgram(output: MIDIValOutput, bankIndex: number, programIndex: number) {
-    output.sendProgramChange(programIndex);
     output.sendControlChange(HSYNTH_MIDI_CC_BANK, bankIndex);
+    output.sendProgramChange(programIndex);
 
     console.log('PROGRAM TITLE NOW: ' + banks[bankIndex].programs[programIndex].title);
     const programTitle = banks[bankIndex].programs[programIndex].title;
