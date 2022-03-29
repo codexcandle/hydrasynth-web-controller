@@ -7,6 +7,8 @@ https://www.ashunsoundmachines.com/hydrasynth-key
 
 Thus, starting with LARGE DISPLAY to choose device PATCH (PROGRAM + BANK).
 
+DESKTOP-ONLY (as I'd prefer to use my large tv for display)!
+
 Note, uses the wonderful template at:
 https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier
 
