@@ -8,11 +8,11 @@ As an owner of the Hydrasynth synthesizer:
 
 I found it difficult to view its (somewhat small) main LCD display screen.
 
-* Thus, this tool was created to address this concern.
-* DESKTOP-ONLY (as again, preferring larger screen space)!
-* MIDI-COMPATIBLE BROWSER ONLY (e.g. chrome, but NOT FIREFOX)!
-* project code started via:
-[sword breaker's template](https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier)
+- Thus, this tool was created to address this concern.
+- DESKTOP-ONLY (as again, preferring larger screen space)!
+- MIDI-COMPATIBLE BROWSER ONLY (e.g. chrome, but NOT FIREFOX)!
+- project code started via:
+  [sword breaker's template](https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier)
 
 ## Setup
 
