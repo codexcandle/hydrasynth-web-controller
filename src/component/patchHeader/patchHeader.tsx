@@ -22,8 +22,10 @@ const PatchHeader: FC<{
       sx={{
         minWidth: 275,
         backgroundColor: '#111111',
+        backgroundImage: 'linear-gradient(80deg, #000000, #222222)',
         color: '#00b8b8',
         borderRadius: '14px',
+        marginBottom: '10px',
       }}
     >
       <CardContent>

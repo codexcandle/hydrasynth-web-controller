@@ -1,15 +1,9 @@
 import './app.sass';
 
-import { Box, Container, CssBaseline, Link, Paper, Typography } from '@mui/material';
+import { Box, Container, CssBaseline, Link, Typography } from '@mui/material';
 import React, { FC, useEffect, useState } from 'react';
 
-import {
-  APP_GITHUB_LINK_LABEL,
-  APP_GITHUB_LINK_URL,
-  APP_HEADER,
-  BANK_FILE_NAMES,
-  HOMEPAGE_URL,
-} from '../../model/constant/appConstants';
+import { BANK_FILE_NAMES, HOMEPAGE_URL } from '../../model/constant/appConstants';
 import PatchSelect from '../patchSelect/patchSelect';
 import * as bankData_factoryBankA from './../../model/bank/factory-bank-a.json';
 import * as bankData_factoryBankB from './../../model/bank/factory-bank-b.json';
@@ -17,6 +11,7 @@ import * as bankData_factoryBankC from './../../model/bank/factory-bank-c.json';
 import * as bankData_inhalt from './../../model/bank/inhalt.json';
 import * as bankData_sunGodRa from './../../model/bank/sun-god-ra.json';
 import BankData from './../../model/interface/bankData';
+import AppHeader from './../appHeader/appHeader';
 import imgUrl from './asset/hsynth.png';
 
 function Copyright() {
@@ -71,29 +66,7 @@ const App: FC = () => {
           maxWidth="lg"
           className="containerBgApp"
         >
-          <Paper
-            sx={{
-              backgroundImage: 'linear-gradient(0deg, #000000, #333333, #000000)',
-              paddingTop: '10px',
-              maxHeight: '40px',
-            }}
-          >
-            <Typography
-              variant="h5"
-              component="h4"
-              gutterBottom
-              sx={{ color: '#8F8D15', textAlign: 'left', marginLeft: '10px' }}
-            >
-              {APP_HEADER}
-            </Typography>
-            <Link
-              href={APP_GITHUB_LINK_URL}
-              className="headerLink"
-              sx={{ color: '#8F8D15', textAlign: 'left', marginLeft: '0px' }}
-            >
-              {APP_GITHUB_LINK_LABEL}
-            </Link>
-          </Paper>
+          <AppHeader />
           {bankData && <PatchSelect banks={bankData} />}
         </Container>
 

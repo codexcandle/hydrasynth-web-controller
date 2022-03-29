@@ -122,21 +122,16 @@ const PatchSelect: FC<{
       sx={{
         display: 'flex',
         flexDirection: 'column',
+        marginTop: '10px',
       }}
     >
       <Container
         component="main"
-        sx={{ mt: 8, mb: 2 }}
+        sx={{ mt: 8, mb: 2, marginTop: '10px' }}
         maxWidth="lg"
         className="containerBg rcorners"
       >
-        {/* <Typography variant="h5" component="h4" gutterBottom sx={{ color: 'gray' }}>
-          {PATCH_SELECTION_HEADER}
-        </Typography> */}
         <PatchHeader bankName={selectedBankName} programName={selectedProgramName} />
-        <Typography variant="h5" component="h2" gutterBottom>
-          {activeBankName}
-        </Typography>
         <BankSelect bankNames={bankNames} selectHandler={handleBankSelect} />
         <Grid container rowSpacing={0.5} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
           {programList?.map((program, index) => (
