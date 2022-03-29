@@ -2,7 +2,7 @@
 
 ## Overview
 
-As an owner of the [Hydrasynth](https://www.ashunsoundmachines.com/hydrasynth-key) hardware synthesizer, I found it difficult to view its (somewhat small) main LCD display screen. Thus, this tool was created.
+As an owner of the [Hydrasynth](https://www.ashunsoundmachines.com/hydrasynth-key) hardware synthesizer, have found it difficult to view its (somewhat small) main LCD display screen. Thus, this tool was created.
 
 A few notes:
 
