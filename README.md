@@ -27,5 +27,5 @@ A few notes:
 Page display just says "BANK....PROGRAM" (and generally appears to not be working).
 
 1. Ensure viewing from midi-compatible brower like CHROME (but NOT Firefox, etc).
-2. Ensure you have your HYDRASYNTH plugged into the same machine you're viewing this app (via MIDI).
-3. Refresh the page (as the app looks for your "hydrasynth" midi device upon page load).
+2. Ensure you have your HYDRASYNTH plugged in (via MIDI) to the same machine you're viewing this app.
+3. Refresh the page (as the app looks for your midi device upon page load).
