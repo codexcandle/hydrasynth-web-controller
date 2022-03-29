@@ -8,10 +8,9 @@ As an owner of the [Hydrasynth](https://www.ashunsoundmachines.com/hydrasynth-ke
 
 A few notes:
 
-- DESKTOP-ONLY (as again, preferring larger screen space)
-- MIDI-COMPATIBLE BROWSER ONLY (e.g. chrome, but NOT FIREFOX)
-- special thanks for:
-  [sword breaker's template](https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier)
+- DESKTOP-ONLY (as again, preferring larger screen space).
+- MIDI-COMPATIBLE BROWSER ONLY (e.g. chrome, but NOT FIREFOX).
+- special thanks for [sword breaker's template](https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier).
 
 ## Setup
 
