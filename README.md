@@ -2,16 +2,16 @@
 
 ## Overview
 
-This project started as was difficult to view the small LCD display of the Hydrasynth:
+As an owner of the Hydrasynth synthesizer:
+
 [hydrasynth homepage](https://www.ashunsoundmachines.com/hydrasynth-key)
 
-Thus, starting with LARGE DISPLAY to choose device PATCH (PROGRAM + BANK).
+I found it difficult to view its (somewhat small) main LCD display screen.
 
-DESKTOP-ONLY (as again, preferring larger screen space)!
-
-CHROME-ONLY (as requires midi-compatible browser)!
-
-Note, this code for this project was started via:
+* Thus, this tool was created to address this concern.
+* DESKTOP-ONLY (as again, preferring larger screen space)!
+* MIDI-COMPATIBLE BROWSER ONLY (e.g. chrome, but NOT FIREFOX)!
+* project code started via:
 [sword breaker's template](https://github.com/TheSwordBreaker/vite-reactts-eslint-prettier)
 
 ## Setup
@@ -27,8 +27,8 @@ Note, this code for this project was started via:
 
 ## Help
 
-Page display just says "BANK....PROGRAM."
+Page display just says "BANK....PROGRAM" (and generally appears to not be working).
 
 1. Ensure viewing from midi-compatible brower like CHROME (but NOT Firefox, etc).
-2. Ensure you have your HYDRASYNTH plugged into the same machine you're viewing this app.
-3. Refresh the page (as looks for midi device on page load).
+2. Ensure you have your HYDRASYNTH plugged into the same machine you're viewing this app (via MIDI).
+3. Refresh the page (as the app looks for your "hydrasynth" midi device upon page load).
