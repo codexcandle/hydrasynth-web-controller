@@ -2,9 +2,10 @@
 
 ## Overview
 
-As an owner of the [Hydrasynth](https://www.ashunsoundmachines.com/hydrasynth-key) hardware synthesizer, I found it difficult to view its (somewhat small) main LCD display screen.
+As an owner of the [Hydrasynth](https://www.ashunsoundmachines.com/hydrasynth-key) hardware synthesizer, I found it difficult to view its (somewhat small) main LCD display screen. Thus, this tool was created.
 
-- Thus, this tool was created!
+A few notes:
+
 - DESKTOP-ONLY (as again, preferring larger screen space)!
 - MIDI-COMPATIBLE BROWSER ONLY (e.g. chrome, but NOT FIREFOX)!
 - project code started via:
